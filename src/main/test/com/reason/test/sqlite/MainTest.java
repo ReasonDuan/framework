@@ -22,12 +22,13 @@ public class MainTest {
 			Connection conn = DriverManager.getConnection("jdbc:sqlite:reason.db");
 			Statement stat = conn.createStatement();
 
-			stat.executeUpdate("create table r_tb_test(name varchar(20), salary int);");// 创建一个表，两列
+			stat.executeUpdate("create table if not exists r_tb_test(name varchar(20), salary int);");// 创建一个表，两列
 
 			stat.executeUpdate("insert into r_tb_test values('ZhangSan',8000);"); // 插入数据
 			stat.executeUpdate("insert into r_tb_test values('LiSi',7800);");
 			stat.executeUpdate("insert into r_tb_test values('WangWu',5800);");
 			stat.executeUpdate("insert into r_tb_test values('ZhaoLiu',9100);");
+			stat.executeUpdate("insert into r_tb_test values('GaoJuan',9200);");
 
 			ResultSet rs = stat.executeQuery("select * from r_tb_test;"); // 查询数据
 
