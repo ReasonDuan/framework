@@ -7,6 +7,16 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Framework Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	
+	<properties>
+		<!-- spring版本号 -->
+		<spring.version>4.2.4.RELEASE</spring.version>
+		<!-- mybatis版本号 -->
+		<mybatis.version>3.2.4</mybatis.version>
+		<!-- hibernate版本号 -->
+		<hibernate.version>4.3.2.Final</hibernate.version>
+	</properties>
+	
 	<dependencies>
 
 		<!-- Spring -->
@@ -14,7 +24,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>4.2.4.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 
 		<dependency>
@@ -30,6 +40,19 @@
 			<artifactId>sqlite-jdbc</artifactId>
 			<version>3.8.11.2</version>
 		</dependency>
+
+		<!-- mybatis start -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		<!-- mybatis end -->
 
 		<!-- Apache command line parser. -->
 		<dependency>
